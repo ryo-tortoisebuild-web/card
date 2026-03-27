@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>高見 亮一 | TortoiseBuild</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #EDE8DF;
+      font-family: 'Noto Serif JP', serif;
+      padding: 2rem 1rem;
+    }
+
+    .card {
+      background: #F5F0E8;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 360px;
+      padding: 2.25rem 1.75rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 2px 24px rgba(80,60,40,0.08);
+    }
+
+    /* ── TOP ── */
+    .top-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      padding-bottom: 1.5rem;
+      border-bottom: 0.5px solid rgba(100,80,60,0.18);
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 1rem;
+      border: 2px solid rgba(100,80,60,0.12);
+      background: #e0d8cc;
+    }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .name {
+      font-size: 21px;
+      font-weight: 500;
+      color: #2e2318;
+      letter-spacing: 0.06em;
+    }
+    .title {
+      font-size: 12px;
+      color: #8a7a68;
+      margin-top: 5px;
+      letter-spacing: 0.1em;
+    }
+
+    /* ── MESSAGE ── */
+    .message-section {
+      width: 100%;
+      padding: 1.25rem 0;
+      border-bottom: 0.5px solid rgba(100,80,60,0.18);
+      text-align: center;
+    }
+    .message-main {
+      font-size: 13px;
+      color: #5a4a3a;
+      line-height: 1.9;
+    }
+    .message-sub {
+      font-size: 12px;
+      color: #9a8878;
+      margin-top: 5px;
+      font-style: italic;
+    }
+
+    /* ── SNS ── */
+    .sns-section {
+      width: 100%;
+      padding-top: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .sns-label {
+      font-size: 10px;
+      color: #a0907e;
+      text-align: center;
+      letter-spacing: 0.14em;
+      margin-bottom: 2px;
+      font-style: italic;
+    }
+
+    .sns-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 14px;
+      border-radius: 10px;
+      border: 0.5px solid rgba(100,80,60,0.2);
+      background: rgba(255,255,255,0.55);
+      font-size: 13px;
+      font-weight: 500;
+      color: #2e2318;
+      text-decoration: none;
+      transition: background 0.18s;
+      font-family: 'Noto Serif JP', serif;
+    }
+    .sns-btn:hover {
+      background: rgba(255,255,255,0.82);
+    }
+
+    .icon-x {
+      width: 24px;
+      height: 24px;
+      border-radius: 5px;
+      background: #000;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-family: sans-serif;
+    }
+    .icon-ig {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+
+    .btn-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .btn-main {
+      font-size: 13px;
+      color: #2e2318;
+    }
+    .btn-sub {
+      font-size: 11px;
+      color: #8a7a68;
+    }
+
+    /* ── BRAND ── */
+    .brand-section {
+      padding-top: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+    .brand-img {
+      width: 44px;
+      height: auto;
+      opacity: 0.88;
+    }
+    .brand-divider {
+      width: 110px;
+      height: 0.5px;
+      background: rgba(100,80,60,0.22);
+      margin: 3px 0;
+    }
+    .brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      font-style: italic;
+      letter-spacing: 0.06em;
+    }
+    .brand-tortoise { color: #2e7da3; font-weight: 500; }
+    .brand-build    { color: #d44c1a; font-weight: 700; }
+    .brand-tagline {
+      font-size: 11px;
+      color: #a0907e;
+      letter-spacing: 0.1em;
+      font-style: italic;
+      font-family: 'Cormorant Garamond', serif;
+      margin-top: 1px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <!-- TOP -->
+    <div class="top-section">
+      <!--
+        【画像差し替え】
+        src に SNS アイコン画像のパスまたは URL を入れてください
+        例: src="./sns_icon.png"
+      -->
+      <div class="avatar">
+        <img src="sns_icon.png" alt="高見 亮一" />
+      </div>
+      <p class="name">高見 亮一</p>
+      <p class="title">Webコーダー</p>
+    </div>
+
+    <!-- MESSAGE -->
+    <div class="message-section">
+      <p class="message-main">これからも末長くよろしくお願いします。</p>
+      <p class="message-sub">つながれたら嬉しいです。</p>
+    </div>
+
+    <!-- SNS -->
+    <div class="sns-section">
+      <p class="sns-label">follow me</p>
+
+      <a class="sns-btn" href="https://x.com/tortoisebuild" target="_blank" rel="noopener">
+        <span class="icon-x">𝕏</span>
+        <span class="btn-text">
+          <span class="btn-main">りょう｜WEBコーダー</span>
+          <span class="btn-sub">@tortoisebuild</span>
+        </span>
+      </a>
+
+      <a class="sns-btn" href="https://www.instagram.com/ryo_tortoisebuild/" target="_blank" rel="noopener">
+        <svg class="icon-ig" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="ig" cx="30%" cy="107%" r="150%">
+              <stop offset="0%"  stop-color="#fdf497"/>
+              <stop offset="5%"  stop-color="#fdf497"/>
+              <stop offset="45%" stop-color="#fd5949"/>
+              <stop offset="60%" stop-color="#d6249f"/>
+              <stop offset="90%" stop-color="#285AEB"/>
+            </radialGradient>
+          </defs>
+          <rect width="24" height="24" rx="6" fill="url(#ig)"/>
+          <circle cx="12" cy="12" r="4.6" fill="none" stroke="#fff" stroke-width="1.8"/>
+          <circle cx="17.6" cy="6.4" r="1.2" fill="#fff"/>
+        </svg>
+        <span class="btn-text">
+          <span class="btn-main">ryo@TortoiseBuild</span>
+          <span class="btn-sub">ryo_tortoisebuild</span>
+        </span>
+      </a>
+    </div>
+
+    <!-- BRAND -->
+    <div class="brand-section">
+      <!--
+        【画像差し替え】
+        src に亀のおもちゃ画像（背景透過PNG）のパスを入れてください
+        例: src="./turtle.png"
+      -->
+      <img class="brand-img" src="turtle.png" alt="TortoiseBuild" />
+      <div class="brand-divider"></div>
+      <p class="brand-name">
+        <span class="brand-tortoise">Tortoise</span><span class="brand-build"> Build</span>
+      </p>
+      <p class="brand-tagline">Slow and sure.</p>
+    </div>
+
+  </div>
+</body>
+</html>
